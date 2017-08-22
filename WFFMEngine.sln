@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		gulpfile.js = gulpfile.js
 		package.json = package.json
 		publishsettings.targets = publishsettings.targets
+		src\Project\WFFMEngine\code\App_Config\Include\Project\z.WFFMEngine.DevSettings.config = src\Project\WFFMEngine\code\App_Config\Include\Project\z.WFFMEngine.DevSettings.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WFFMEngine", "WFFMEngine", "{37F2F733-2C8A-46DC-96C1-FFF2808B2F76}"

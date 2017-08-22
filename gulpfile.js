@@ -242,9 +242,9 @@ gulp.task("Publish-All-Configs", function () {
     );
 });
 
-/*****************************
- Watchers
-*****************************/
+/***************************************************
+                    Watchers
+****************************************************/
 gulp.task("Auto-Publish-Css", function () {
     var root = "./src";
     var roots = [root + "/**/styles", "!" + root + "/**/obj/**/styles"];
@@ -286,7 +286,7 @@ gulp.task("Auto-Publish-Views", function () {
 gulp.task("Auto-Publish-Assemblies", function () {
     var root = "./src";
     var roots = [root + "/**/code/**/bin"];
-    var files = "/**/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";;
+    var files = "/**/Sitecore.{Feature,Foundation,WFFMEngine}.*.{dll,pdb}";
     var destination = config.websiteRoot + "/bin/";
     gulp.src(roots, { base: root }).pipe(
       foreach(function (stream, rootFolder) {
