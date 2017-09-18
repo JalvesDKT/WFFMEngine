@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace DKT.Feature.Accounts.Controllers
+namespace XC.Feature.Accounts.Controllers
 {
     public class AccountController : Controller
     {

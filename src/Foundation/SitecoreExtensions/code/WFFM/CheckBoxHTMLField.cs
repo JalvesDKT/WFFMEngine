@@ -3,7 +3,7 @@ using Sitecore.Forms.Mvc.Controllers.ModelBinders.FieldBinders;
 using Sitecore.Forms.Mvc.Validators;
 using Sitecore.Forms.Mvc.ViewModels.Fields;
 
-namespace DKT.Foundation.SitecoreExtensions.WFFM
+namespace XC.Foundation.SitecoreExtensions.WFFM
 {
 
     /// <summary>

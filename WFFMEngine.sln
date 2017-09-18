@@ -20,27 +20,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WFFMEngine", "WFFMEngine", "{37F2F733-2C8A-46DC-96C1-FFF2808B2F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.WFFMEngine.Website", "src\Project\WFFMEngine\code\DKT.WFFMEngine.Website.csproj", "{309D0A9F-CC0B-4C55-97DE-47D6769289F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.WFFMEngine.Website", "src\Project\WFFMEngine\code\XC.WFFMEngine.Website.csproj", "{309D0A9F-CC0B-4C55-97DE-47D6769289F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{8AE89042-E23F-4113-953E-67561A07A3AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.WFFMEngine.Serialization", "src\Foundation\Serialization\code\DKT.WFFMEngine.Serialization.csproj", "{64DB29D9-0478-4418-AF3B-2462AFAC80AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.WFFMEngine.Serialization", "src\Foundation\Serialization\code\XC.WFFMEngine.Serialization.csproj", "{64DB29D9-0478-4418-AF3B-2462AFAC80AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D481786F-DB78-49E2-83DA-81C19950C9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.WFFMEngine.Common", "src\Project\Common\code\DKT.WFFMEngine.Common.csproj", "{D7FC754F-F8FD-43F2-BB79-F20BC50547C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.WFFMEngine.Common", "src\Project\Common\code\XC.WFFMEngine.Common.csproj", "{D7FC754F-F8FD-43F2-BB79-F20BC50547C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{0D963702-B6AA-469C-8CFB-04690A3CEA78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.Feature.Accounts", "src\Feature\Accounts\code\DKT.Feature.Accounts.csproj", "{2587C9DB-8CAF-4243-83D7-A68DF172F9A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.Feature.Accounts", "src\Feature\Accounts\code\XC.Feature.Accounts.csproj", "{2587C9DB-8CAF-4243-83D7-A68DF172F9A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{BC80AB15-1E5C-4296-A228-1921FEA2484D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.Feature.Forms", "src\Feature\Forms\code\DKT.Feature.Forms.csproj", "{7B4F5B50-D1CD-4020-9B0C-B1EF7E6B559C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.Feature.Forms", "src\Feature\Forms\code\XC.Feature.Forms.csproj", "{7B4F5B50-D1CD-4020-9B0C-B1EF7E6B559C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SitecoreExtensions", "SitecoreExtensions", "{0625242B-8D0E-41C6-8D50-C8FA04EF5A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKT.Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\code\DKT.Foundation.SitecoreExtensions.csproj", "{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\code\XC.Foundation.SitecoreExtensions.csproj", "{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

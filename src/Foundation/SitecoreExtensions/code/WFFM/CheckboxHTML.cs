@@ -1,7 +1,7 @@
 ﻿using Sitecore.Form.Core.Attributes;
 using Sitecore.Form.Core.Visual;
 using Sitecore.Form.Web.UI.Controls;
-namespace DKT.Foundation.SitecoreExtensions.WFFM
+namespace XC.Foundation.SitecoreExtensions.WFFM
 {
     /// <summary>
     /// Checkbox HTML
