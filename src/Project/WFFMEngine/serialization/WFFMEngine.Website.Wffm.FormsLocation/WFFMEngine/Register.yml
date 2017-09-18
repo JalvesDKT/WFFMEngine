@@ -1,0 +1,44 @@
+﻿---
+ID: "daf2c64d-8971-43d4-a067-300e409a1fc9"
+Parent: "f225d213-029e-4f0a-8f76-853daeb83871"
+Template: "ffb1da32-2764-47db-83b0-95b843546a7e"
+Path: /sitecore/system/Modules/Web Forms for Marketers/Project/WFFMEngine/Register
+DB: master
+SharedFields:
+- ID: "46fb324a-9741-43bd-a0c9-5081a39d40aa"
+  Hint: Show Introduction
+  Type: Checkbox
+  Value: 0
+- ID: "a42052f7-6c18-424a-a2a1-7a72054cb1a6"
+  Hint: Show Title
+  Type: Checkbox
+  Value: 1
+- ID: "af08c32b-f101-44a4-baae-677383e8eb02"
+  Hint: Check Actions
+  Value: |
+    <?xml version="1.0" encoding="utf-16"?>
+    <li xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <g id="{10FE9225-5E6C-4896-9CD2-880D6D48C4CC}" displayName="Check Actions" />
+    </li>
+- ID: "faeacd39-b059-4f46-bec4-74ba468a97b8"
+  Hint: Show Footer
+  Type: Checkbox
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20170918T030623:636413007838463256Z"
+    - ID: "6739fa82-a9b4-40f1-aefe-3d67ae3e8dfc"
+      Hint: Title Tag
+      Value: H1
+    - ID: "86d6a401-5a20-49c9-a2f8-0312398ee946"
+      Hint: Title
+      Value: Register
+    - ID: "9c4c1994-5140-49d3-bad7-db997816f816"
+      Hint: Success Page
+      Value: |
+        <link id="{00000000-0000-0000-0000-000000000000}" />

@@ -1,0 +1,105 @@
+﻿---
+ID: "b291b3f1-6766-4de4-b731-3f102b83356d"
+Parent: "bab53388-29d4-4f17-874e-f0bb4091894c"
+Template: "c9e1bf85-800a-4247-a3a3-c3f5dfbfd6aa"
+Path: /sitecore/system/Modules/Web Forms for Marketers/Project/WFFMEngine/Create an Account/Optional information/Country
+DB: master
+SharedFields:
+- ID: "358e7aa0-e3e6-4ef6-92df-ec1301737b50"
+  Hint: Parameters
+  Value: <SelectedValue><item></item></SelectedValue><Items><item>USA</item><item>Denmark</item></Items>
+- ID: "35c76a0b-b630-458c-aecc-1d62c50d24fc"
+  Hint: Field Link
+  Value: "{C6D97C39-23B5-4B7E-AFC7-9F41795533C6}"
+- ID: "acd3122b-f975-433e-9802-35bc5f8fe2b4"
+  Hint: Required
+  Type: Checkbox
+  Value: 0
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: da
+  Fields:
+  - ID: "26cdc7c2-5307-4591-a7f9-5c034a05630a"
+    Hint: Localized Parameters
+    Value: <Information>Vælg det land, du bor i</Information>
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Land
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020356Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Land
+- Language: "de-DE"
+  Fields:
+  - ID: "26cdc7c2-5307-4591-a7f9-5c034a05630a"
+    Hint: Localized Parameters
+    Value: <Information>Wählen Sie das Land aus, indem Sie wohnen</Information>
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Land
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020544Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Land
+- Language: en
+  Fields:
+  - ID: "26cdc7c2-5307-4591-a7f9-5c034a05630a"
+    Hint: Localized Parameters
+    Value: <Information>Select country where you are living</Information>
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Country
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20080617T115457:633493004978281250"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Country
+- Language: "ja-JP"
+  Fields:
+  - ID: "26cdc7c2-5307-4591-a7f9-5c034a05630a"
+    Hint: Localized Parameters
+    Value: <Information>あなたが居住している国を選択してください</Information>
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 国
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020709Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: 国

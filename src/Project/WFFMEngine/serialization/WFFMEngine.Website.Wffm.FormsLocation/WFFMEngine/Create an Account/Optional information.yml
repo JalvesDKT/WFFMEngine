@@ -1,0 +1,86 @@
+﻿---
+ID: "bab53388-29d4-4f17-874e-f0bb4091894c"
+Parent: "0e8906b3-99ba-421e-a74d-277ed17a32fd"
+Template: "cf47dbae-6e22-465a-b9b5-3eb6bcf9ecbf"
+Path: /sitecore/system/Modules/Web Forms for Marketers/Project/WFFMEngine/Create an Account/Optional information
+DB: master
+SharedFields:
+- ID: "358e7aa0-e3e6-4ef6-92df-ec1301737b50"
+  Hint: Parameters
+  Value: <ShowLegend>Yes</ShowLegend>
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Valgfri oplysninger
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020357Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Valgfri oplysninger
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Optionale Informationen
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020545Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Optionale Informationen
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Optional information
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20080617T115700:633493006203593750"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: Optional information
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: オプション情報
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170829T020710Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "821724f3-30bb-4152-a770-88bc43ac175a"
+      Hint: Title
+      Value: オプション情報

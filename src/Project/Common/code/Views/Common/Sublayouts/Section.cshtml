@@ -1,0 +1,7 @@
+﻿@using Sitecore
+@using DynamicPlaceholders.Mvc.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<section class="section section-full">
+    @Html.Sitecore().DynamicPlaceholder("section")
+</section>

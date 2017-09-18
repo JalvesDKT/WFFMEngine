@@ -1,0 +1,32 @@
+﻿---
+ID: "53b49494-3eaf-4f7f-9353-5880acede89a"
+Parent: "b8ad1449-02e5-4353-8d3d-1ccd5b09f5d9"
+Template: "92802422-dc49-4b41-9999-205cd8b151ef"
+Path: /sitecore/content/WFFMEngine/Home
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{19D618C3-CE49-4CFB-903E-4104784859AB}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{0562735F-DA70-4CDA-A029-D93258D152CF}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170918T004902Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

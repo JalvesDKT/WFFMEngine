@@ -12,7 +12,7 @@
     "gulp-exec": "^2.1.2",
     "gulp-foreach": "^0.1.0",
     "gulp-load-plugins": "^1.0.0",
-    "gulp-msbuild": "0.2.13",
+    "gulp-msbuild": "^0.4.4",
     "gulp-newer": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",
@@ -24,13 +24,11 @@
     "run-sequence": "^1.1.4",
     "vinyl": "^1.1.0",
     "xml2js": "^0.4.16",
-    "xmlpoke": "^0.1.12"
+    "xmlpoke": "^0.1.12",
+    "yargs": "^6.4.0"
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.0.0",
-    "gulp-nuget-restore": "^0.4.0",
-    "webpack": "^2.6.1"
+    "gulp-nuget-restore": "^0.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,0 +1,51 @@
+﻿---
+ID: "2df91738-bda1-46c7-8e6a-c6e1560aba5a"
+Parent: "4cc34fdc-135b-4554-87ab-111e1ff001f9"
+Template: "19d618c3-ce49-4cfb-903e-4104784859ab"
+Path: /sitecore/content/WFFMEngine/Home/Accounts/Register
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 25
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{0562735F-DA70-4CDA-A029-D93258D152CF}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{6F2A9284-4378-402D-944C-960142A1E06F}"
+              p:before="*"
+              s:id="{A0DA74DD-A24B-4974-A0A2-20603E820355}"
+              s:ph="/wffmEngine-main/section_178b8c52-e441-495c-971e-8a068c925c85" />
+            <r
+              uid="{178B8C52-E441-495C-971E-8A068C925C85}"
+              p:after="*[1=2]"
+              s:id="{B9AA9569-6B38-489B-B66B-6975783FE1C6}"
+              s:ph="wffmEngine-main" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170918T011404Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
