@@ -2,10 +2,8 @@
 using Sitecore.Forms.Mvc.Controllers.ModelBinders.FieldBinders;
 using Sitecore.Forms.Mvc.Validators;
 using Sitecore.Forms.Mvc.ViewModels.Fields;
-
 namespace XC.Foundation.SitecoreExtensions.WFFM
 {
-
     /// <summary>
     /// CheckBox HTML Field
     /// </summary>
@@ -28,14 +26,8 @@ namespace XC.Foundation.SitecoreExtensions.WFFM
         /// </value>
         public string TermsLabel
         {
-            get
-            {
-                return !string.IsNullOrEmpty(TermsLabelHTML) ? TermsLabelHTML : base.Title;
-            }
-            set
-            {
-                TermsLabelHTML = value;
-            }
+            get { return !string.IsNullOrEmpty(TermsLabelHTML) ? TermsLabelHTML : base.Title; }
+            set { TermsLabelHTML = value; }
         }
 
         /// <summary>
@@ -58,8 +50,6 @@ namespace XC.Foundation.SitecoreExtensions.WFFM
             {
                 base.Value = value;
             }
-        }
-
-        
+        }       
     }
 }
