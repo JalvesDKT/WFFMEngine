@@ -1,0 +1,24 @@
+﻿---
+ID: "85939300-8ac7-41ed-8068-3f71bb8cef73"
+Parent: "ddfc7adc-2aa0-4bfd-b6df-6e2eec35af25"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Foundation/Forms/XC Forms/Forms General Data/Web Forms Lookup Fields
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: /sitecore/system/Modules/Web Forms for Marketers/Project/WFFMEngine
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Name Lookup Value List
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170919T035111Z

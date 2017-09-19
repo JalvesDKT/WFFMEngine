@@ -1,0 +1,21 @@
+﻿---
+ID: "bff6460d-63c5-4894-b935-8d947e954283"
+Parent: "0ac5a1c4-177a-4e2d-bc87-609229ef3903"
+Template: "09d59b88-b63c-4e0a-ab1d-3241330dd808"
+Path: /sitecore/content/WFFMEngine/Models/Web Forms/XC Forms
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170919T035849Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "85939300-8ac7-41ed-8068-3f71bb8cef73"
+      Hint: Web Forms Mapping Fields
+      Value: 
