@@ -12,6 +12,9 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170919T035849Z
+    - ID: "4578713c-fa95-4f72-8104-3e3fc8c3d5b8"
+      Hint: WFFM Name Fields
+      Value: "Key=%7BDAF2C64D-8971-43D4-A067-300E409A1FC9%7D&Key6=%7BDAF2C64D-8971-43D4-A067-300E409A1FC9%7D"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -19,3 +22,12 @@ Languages:
     - ID: "85939300-8ac7-41ed-8068-3f71bb8cef73"
       Hint: Web Forms Mapping Fields
       Value: 
+    - ID: "90a81963-fb87-4ab1-87f0-2ce5fb53ff82"
+      Hint: Web Froms
+      Value: "{DAF2C64D-8971-43D4-A067-300E409A1FC9}"
+    - ID: "a79cc9a2-6286-41be-8c56-f1ccf7a11ba9"
+      Hint: Web Forms Mapping
+      Value: _
+    - ID: "e7f36265-f7fd-48bb-b0cb-7bc6f9e042c7"
+      Hint: WFFM Mapping Fields
+      Value: "Name&_DAF2C64D_8971_43D4_A067_300E409A1FC9_=Name%26%7BDAF2C64D-8971-43D4-A067-300E409A1FC9%7D"
