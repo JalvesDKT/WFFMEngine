@@ -24,10 +24,10 @@ Languages:
       Value: 
     - ID: "90a81963-fb87-4ab1-87f0-2ce5fb53ff82"
       Hint: Web Froms
-      Value: "{DAF2C64D-8971-43D4-A067-300E409A1FC9}"
+      Value: "{0E8906B3-99BA-421E-A74D-277ED17A32FD}"
     - ID: "a79cc9a2-6286-41be-8c56-f1ccf7a11ba9"
       Hint: Web Forms Mapping
       Value: _
     - ID: "e7f36265-f7fd-48bb-b0cb-7bc6f9e042c7"
       Hint: WFFM Mapping Fields
-      Value: "Name&_DAF2C64D_8971_43D4_A067_300E409A1FC9_=Name%26%7BDAF2C64D-8971-43D4-A067-300E409A1FC9%7D"
+      Value: "key=E-mail&Test=Last%20Name&source=%7B0E8906B3-99BA-421E-A74D-277ED17A32FD%7D"

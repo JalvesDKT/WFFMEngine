@@ -22,6 +22,11 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
     public class MappingWFFMFieldName : Input
     {
 
+        public MappingWFFMFieldName()
+        {
+            IsFromSourceExist = false;
+        }
+
         /// <summary>Gets or sets the name of the field.</summary>
         /// <value>The name of the field.</value>
         /// <contract>
@@ -94,6 +99,24 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is from source exist.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is from source exist; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsFromSourceExist
+        {
+            get
+            {
+                return GetViewStateBool("IsFromSourceExist");
+            }
+            set
+            {
+                Assert.ArgumentNotNull((object)value, "value");
+                this.SetViewStateBool("IsFromSourceExist", value);
+            }
+        }
 
         /// <summary>Name html control style</summary>
         protected virtual string NameStyle
@@ -227,9 +250,13 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             Assert.ArgumentNotNull((object)e, "e");
             base.OnLoad(e);
             if (Sitecore.Context.ClientPage.IsEvent)
+            {
                 this.LoadValue();
+            }
             else
+            {
                 this.BuildControl();
+            }
         }
 
         private void BuildControl()
@@ -237,20 +264,19 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             this.Controls.Clear();
 
             UrlString urlString = new UrlString(this.Value);
-
-
-            this.Controls.Add(new LiteralControl(this.BuildMappingFormFieldSource("","","")));
-
+            
             foreach (string key in urlString.Parameters.Keys)
             {
                 if (key.Length > 0)
                 {
-
-                    string [] paramters = HttpUtility.UrlDecode( urlString.Parameters[key]).Split(new char[] {','});
-
-                    var fieldMapping = paramters != null && paramters.Length > 0 ? paramters[0] : string.Empty;
-                    var fieldSource = paramters != null && paramters.Length >1 ? paramters[1] : string.Empty;
+                    var fieldMapping = urlString.Parameters[key];
+                    var fieldSource = urlString.Parameters["source"] != null ? urlString.Parameters["source"] : string.Empty;
                     this.Controls.Add(new LiteralControl(this.BuildParameterMappingFieldNameFromSource(key, fieldMapping, fieldSource)));
+                }
+                else
+                {
+                   
+                    this.Controls.Add(new LiteralControl(this.BuildMappingFormFieldSource("", "", urlString.Parameters["source"])));
                 }
             }
             this.Controls.Add(new LiteralControl(this.BuildParameterMappingFieldNameFromSource(string.Empty, string.Empty, string.Empty)));
@@ -261,19 +287,26 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             if (this.ReadOnly || this.Disabled)
                 return;
             System.Web.UI.Page handler = HttpContext.Current.Handler as System.Web.UI.Page;
+
             NameValueCollection nameValueCollection = handler == null ? new NameValueCollection() : handler.Request.Form;
             UrlString urlString = new UrlString();
+
             foreach (string key in nameValueCollection.Keys)
             {
                 if (!string.IsNullOrEmpty(key) && key.StartsWith(this.ID + "_Param", StringComparison.InvariantCulture) && !key.EndsWith("_value", StringComparison.InvariantCulture) && !key.EndsWith("_source", StringComparison.InvariantCulture))
                 {
                     string input = nameValueCollection[key];
                     string fieldFormName = nameValueCollection[key + "_value"];
-                   
+                    string fieldFormSource = nameValueCollection[key + "_source"];
+
                     if (!string.IsNullOrEmpty(input))
                     {
                         string index = Regex.Replace(input, "\\W", "_");
                         urlString[index] = fieldFormName ?? string.Empty;
+                    }
+                    if(!string.IsNullOrWhiteSpace(fieldFormSource))
+                    {
+                        urlString["source"] = fieldFormSource;
                     }
                 }
                 else if(!string.IsNullOrEmpty(key) && key.EndsWith("_source", StringComparison.InvariantCulture))
@@ -282,10 +315,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                     if (!string.IsNullOrWhiteSpace(fieldFormSource))
                     {
                         this.Controls.Add(new LiteralControl(this.BuildParameterMappingFieldNameFromSource(key, string.Empty, fieldFormSource)));
-
-                        string input = nameValueCollection[key];
-                        string index = Regex.Replace(input, "\\W", "_");
-                        urlString[index] = urlString + "&" + fieldFormSource ?? string.Empty;
+                        urlString["source"] = fieldFormSource;                      
                     }
                 }
             }
@@ -309,7 +339,15 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             string str2 = this.Disabled ? " disabled=\"disabled\"" : string.Empty;
             string str3 = this.IsVertical ? "</tr><tr>" : string.Empty;
 
-            string controlRowsHTML = string.Format("<table width=\"100%\" class='scAdditionalParameters'><tr><td>{0}</td>{2}<td width=\"80%\">{1}</td></tr></table>",
+
+
+            string controlSourceHTML = string.Empty;
+            if(!IsFromSourceExist)
+            {
+                controlSourceHTML = BuildMappingFormFieldSource(mappingField, fieldName, source);
+                IsFromSourceExist = true;
+            }
+            string controlRowsHTML = string.Format("<table width=\"100%\" class='scAdditionalParameters'><tr><td>{0}</td>{2}<td width=\"100%\">{1}</td></tr></table>",
                                                     (object)string.Format("<input id=\"{0}\" name=\"{1}\" type=\"text\"{2}{3} style=\"{6}\" value=\"{4}\" onchange=\"{5}\"/>", 
                                                                            (object)uniqueId, 
                                                                            (object)uniqueId, 
@@ -322,7 +360,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                                                     (object)this.GetValueHtmlControlFromSource(uniqueId, StringUtil.EscapeQuote(HttpUtility.UrlDecode(fieldName)), StringUtil.EscapeQuote(HttpUtility.UrlDecode(source))), //{1}
                                                     (object)str3); //{2}
             
-            return controlRowsHTML;
+            return string.Concat( controlSourceHTML, controlRowsHTML);
         }
 
         private string BuildMappingFormFieldSource(string mappingField, string fieldName, string source)
@@ -344,7 +382,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             HtmlTextWriter htmlTextWriter = new HtmlTextWriter((TextWriter)new StringWriter());
             Item[] items = this.GetItems(Sitecore.Context.ContentDatabase.GetItem(this.ItemID));
             htmlTextWriter.Write("<select id=\"" + id + "_source\" name=\"" + id + "_source\"" + this.GetControlAttributes() + ">");
-            htmlTextWriter.Write("<option" + (string.IsNullOrEmpty(value) ? " selected=\"selected\"" : string.Empty) + " value=\"\">Select Forms</option>");
+            htmlTextWriter.Write("<option" + (string.IsNullOrEmpty(value) ? " selected=\"selected\"" : string.Empty) + " value=\"Default\">Select Forms</option>");
             foreach (Item obj in items)
             {
                 string itemHeader = this.GetItemHeader(obj);
@@ -363,6 +401,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             {
                 // Form Field Empty: No source has been selected.
                 htmlTextWriter.Write("<select id=\"" + id + "_value\" name=\"" + id + "_value\"" + id + ">");
+                htmlTextWriter.Write("<option value=\"Default\">Select Form Field</option>");
                 htmlTextWriter.Write("<option" + (string.IsNullOrEmpty(fieldName) ? " selected=\"selected\"" : string.Empty) + " value=\"\"></option>");
                 htmlTextWriter.Write("</select>");
                 return htmlTextWriter.InnerWriter.ToString();
@@ -380,8 +419,8 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                 return htmlTextWriter.InnerWriter.ToString();
             }
 
-            htmlTextWriter.Write("<select id=\"" + sourceFormID + "_value\" name=\"" + sourceFormID + "_value\"" + sourceFormID + ">");
-            htmlTextWriter.Write("<option" + (string.IsNullOrEmpty(sourceFormID) ? " selected=\"selected\"" : string.Empty) + " value=\"\"></option>");
+            htmlTextWriter.Write("<select id=\"" + id + "_value\" name=\"" + id + "_value\" value=\"" +id +"_value\" > ");
+            htmlTextWriter.Write("<option value=\"Default\">Select Form Field</option>");
 
             foreach ( Item secionForm in form.Children)
             {
@@ -393,7 +432,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                 {
 
                     bool flag = formfield.Name == fieldName;
-                    htmlTextWriter.Write("<option value=\"" + formfield.Name + "\"" + (flag ? " selected=\"selected\"" : string.Empty) + ">" + formfield.Name + "</option>");
+                    htmlTextWriter.Write("<option value=\"" + formfield.Name + "\"" + (flag ? " selected=\"selected\"" : string.Empty) + " id=\"" + id + "_value\" name=\"" + id + "_value\">" + formfield.Name + "</option>");
                 }
             }
                       
@@ -401,7 +440,6 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             htmlTextWriter.Write("</select>");
             return htmlTextWriter.InnerWriter.ToString();           
         }
-
-
+        
     }
 }
