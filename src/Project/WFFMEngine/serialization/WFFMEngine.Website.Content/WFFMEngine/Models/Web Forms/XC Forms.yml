@@ -19,6 +19,9 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\admin
+    - ID: "7a22c838-3471-4c0a-b6d6-181d32c34332"
+      Hint: XC WFFM
+      Value: "Key=%7B8818EBA7-0FDA-4F69-90E8-C54BCC4AB7F0%7D&formSourceID=%7B0E8906B3-99BA-421E-A74D-277ED17A32FD%7D"
     - ID: "85939300-8ac7-41ed-8068-3f71bb8cef73"
       Hint: Web Forms Mapping Fields
       Value: 
@@ -28,6 +31,9 @@ Languages:
     - ID: "a79cc9a2-6286-41be-8c56-f1ccf7a11ba9"
       Hint: Web Forms Mapping
       Value: _
+    - ID: "cb13d4c2-60a8-4c00-a52f-bed908fdfce6"
+      Hint: XC Form
+      Value: "EmailAddress=%7BA5578A3A-B941-4A1F-862F-7FFE676403C4%7D&ZipCode=%7BC5F7F072-E33B-4834-B8EB-2F84F68E8CC1%7D&formSourceID=%7BDAF2C64D-8971-43D4-A067-300E409A1FC9%7D"
     - ID: "e7f36265-f7fd-48bb-b0cb-7bc6f9e042c7"
       Hint: WFFM Mapping Fields
-      Value: "key=E-mail&Test=Last%20Name&source=%7B0E8906B3-99BA-421E-A74D-277ED17A32FD%7D"
+      Value: formSourceID=Default

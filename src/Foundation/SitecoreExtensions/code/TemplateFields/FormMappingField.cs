@@ -15,40 +15,51 @@ using System.Web.UI;
 
 namespace XC.Foundation.SitecoreExtensions.TemplateFields
 {
-    [UsedImplicitly]
-    public class MappingWFFMFieldName : Input
+    /// <summary>
+    /// Form Mapping Field
+    /// </summary>
+    /// <seealso cref="Sitecore.Web.UI.HtmlControls.Input" />
+    public class FormMappingField : Input
     {
 
-        public MappingWFFMFieldName()
+
+        #region Form Mapping Field Public Method /  Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormMappingField"/> class.
+        /// </summary>
+        public FormMappingField()
         {
             IsFormDataSourceAlreadyCreated = false;
         }
 
-        /// <summary>Gets or sets the name of the field.</summary>
-        /// <value>The name of the field.</value>
-        /// <contract>
-        ///   <requires name="value" condition="not null" />
-        ///   <ensures condition="nullable" />
-        /// </contract>
-        public string FieldName
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is form data source already created.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is form data source already created; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsFormDataSourceAlreadyCreated
         {
             get
             {
-                return this.GetViewStateString("FieldName");
+                return GetViewStateBool("IsFormDataSourceAlreadyCreated");
             }
             set
             {
                 Assert.ArgumentNotNull((object)value, "value");
-                this.SetViewStateString("FieldName", value);
+                this.SetViewStateBool("IsFormDataSourceAlreadyCreated", value);
             }
         }
+        #endregion
 
-        /// <summary>Gets or sets the item ID.</summary>
-        /// <value>The item ID.</value>
-        /// <contract>
-        ///   <requires name="value" condition="not null" />
-        ///   <ensures condition="nullable" />
-        /// </contract>
+        #region [FMF] Public Properties
+
+        /// <summary>
+        /// Gets or sets the item identifier.
+        /// </summary>
+        /// <value>
+        /// The item identifier.
+        /// </value>
         public string ItemID
         {
             get
@@ -62,27 +73,12 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             }
         }
 
-        /// <summary>Gets or sets the source.</summary>
-        /// <value>The source.</value>
-        /// <contract>
-        ///   <requires name="value" condition="not null" />
-        ///   <ensures condition="nullable" />
-        /// </contract>
-        public string Source
-        {
-            get
-            {
-                return this.GetViewStateString("Source");
-            }
-            set
-            {
-                Assert.ArgumentNotNull((object)value, "value");
-                this.SetViewStateString("Source", value);
-            }
-        }
-
-        /// <summary>Gets or sets the item language.</summary>
-        /// <value>The item language.</value>
+        /// <summary>
+        /// Gets or sets the item language.
+        /// </summary>
+        /// <value>
+        /// The item language.
+        /// </value>
         public string ItemLanguage
         {
             get
@@ -97,26 +93,44 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this instance is from source exist.
+        /// Gets or sets the source.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if this instance is from source exist; otherwise, <c>false</c>.
+        /// The source.
         /// </value>
-        public bool IsFormDataSourceAlreadyCreated
+        public string Source
         {
             get
             {
-                return GetViewStateBool("IsFormDataSourceAlreadyCreated");
+                return this.GetViewStateString("Source");
             }
             set
             {
                 Assert.ArgumentNotNull((object)value, "value");
-                this.SetViewStateBool("IsFormDataSourceAlreadyCreated", value);
+                this.SetViewStateString("Source", value);
             }
         }
 
-       
-        /// <summary>Name html control style</summary>
+        /// <summary>
+        /// Is control vertical
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is vertical; otherwise, <c>false</c>.
+        /// </value>
+        protected virtual bool IsVertical
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Gets the name style.
+        /// </summary>
+        /// <value>
+        /// The name style.
+        /// </value>
         protected virtual string NameStyle
         {
             get
@@ -125,64 +139,36 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             }
         }
 
-        /// <summary>Is control vertical</summary>
-        protected virtual bool IsVertical
+        /// <summary>
+        /// Gets or sets the name of the field.
+        /// </summary>
+        /// <value>
+        /// The name of the field.
+        /// </value>
+        public string FieldName
         {
             get
             {
-                return false;
+                return this.GetViewStateString("FieldName");
+            }
+            set
+            {
+                Assert.ArgumentNotNull((object)value, "value");
+                this.SetViewStateString("FieldName", value);
             }
         }
-              
 
-        /// <summary>Gets the items.</summary>
-        /// <param name="current">The current.</param>
-        /// <returns>The items.</returns>
-        protected virtual Item[] GetItems(Item current)
-        {
-            Assert.ArgumentNotNull((object)current, "current");
-            using (new LanguageSwitcher(this.ItemLanguage))
-                return LookupSources.GetItems(current, this.Source);
-        }
+        #endregion
 
-        /// <summary>Gets the item header.</summary>
-        /// <param name="item">The item.</param>
-        /// <returns>The item header.</returns>
-        /// <contract>
-        ///   <requires name="item" condition="not null" />
-        ///   <ensures condition="not null" />
-        /// </contract>
-        protected virtual string GetItemHeader(Item item)
-        {
-            Assert.ArgumentNotNull((object)item, "item");
-            string str = StringUtil.GetString(new string[1]
-            {
-                this.FieldName
-            });
-            return !str.StartsWith("@", StringComparison.InvariantCulture) ? (str.Length <= 0 ? item.DisplayName : item[this.FieldName]) : item[str.Substring(1)];
-        }
-
-        /// <summary>Gets the item value.</summary>
-        /// <param name="item">The item.</param>
-        /// <returns></returns>
-        /// <contract>
-        ///   <requires name="item" condition="not null" />
-        ///   <ensures condition="not null" />
-        /// </contract>
-        protected virtual string GetItemValue(Item item)
-        {
-            Assert.ArgumentNotNull((object)item, "item");
-            return item.ID.ToString();
-        }
-               
-        /// <summary>Parameters the change.</summary>
+        #region [FMF] Events
         [UsedImplicitly]
         protected void ParameterChange()
         {
             ClientPage clientPage = Sitecore.Context.ClientPage;
-            if (clientPage.ClientRequest.Source == StringUtil.GetString(clientPage.ServerProperties[this.ID + "_LastParameterID"]) && !string.IsNullOrEmpty(clientPage.ClientRequest.Form[clientPage.ClientRequest.Source]))
+            if (clientPage.ClientRequest.Source == StringUtil.GetString(clientPage.ServerProperties[this.ID + "_LastParameterID"]) 
+                && !string.IsNullOrEmpty(clientPage.ClientRequest.Form[clientPage.ClientRequest.Source]))
             {
-                string str = this.BuildParameterMappingFieldNameFromSource(string.Empty,string.Empty, string.Empty);
+                string str = this.BuildParameterMappingFieldNameFromSource(string.Empty, string.Empty, string.Empty);
                 clientPage.ClientResponse.Insert(this.ID, "beforeEnd", str);
             }
             NameValueCollection form = (NameValueCollection)null;
@@ -193,38 +179,9 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                 return;
             clientPage.ClientResponse.SetReturnValue(true);
         }
+        #endregion
 
-        /// <summary>Validates the specified client page.</summary>
-        /// <param name="form">The form.</param>
-        /// <returns>The result of the validation.</returns>
-        private bool Validate(NameValueCollection form)
-        {
-            Assert.ArgumentNotNull((object)form, "form");
-            foreach (string key in form.Keys)
-            {
-                if (key != null && key.StartsWith(this.ID + "_Param", StringComparison.InvariantCulture) && !key.EndsWith("_value", StringComparison.InvariantCulture))
-                {
-                    string input = form[key];
-                    //if (!string.IsNullOrEmpty(input) && !Regex.IsMatch(input, "^\\w*$"))
-                    //{
-                    //    SheerResponse.Alert(string.Format("The key \"{0}\" is invalid.\n\nA key may only contain letters and numbers.", (object)input));
-                    //    SheerResponse.SetReturnValue(false);
-                    //    return false;
-                    //}
-                }
-            }
-            return true;
-        }
-
-        /// <summary>Sets the modified flag.</summary>
-        protected override void SetModified()
-        {
-            base.SetModified();
-            if (!this.TrackModified)
-                return;
-            Sitecore.Context.ClientPage.Modified = true;
-        }
-
+        #region [FMF] Extended from the Input
 
         /// <summary>
         /// Raises the <see cref="E:Load" /> event.
@@ -244,6 +201,47 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             }
         }
 
+        #endregion
+
+        #region [FMF] Private / Protected Virtual Methods
+
+        /// <summary>Validates the specified client page.</summary>
+        /// <param name="form">The form.</param>
+        /// <returns>The result of the validation.</returns>
+        private bool Validate(NameValueCollection form)
+        {
+            Assert.ArgumentNotNull((object)form, "form");
+            return true;
+        }
+
+
+        /// <summary>
+        /// Gets the items.
+        /// </summary>
+        /// <param name="current">The current.</param>
+        /// <returns></returns>
+        protected virtual Item[] GetItems(Item current)
+        {
+            Assert.ArgumentNotNull((object)current, "current");
+            using (new LanguageSwitcher(this.ItemLanguage))
+                return LookupSources.GetItems(current, this.Source);
+        }
+
+        /// <summary>
+        /// Gets the item header.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
+        protected virtual string GetItemHeader(Item item)
+        {
+            Assert.ArgumentNotNull((object)item, "item");
+            string str = StringUtil.GetString(new string[1]
+            {
+                this.FieldName
+            });
+            return !str.StartsWith("@", StringComparison.InvariantCulture) ? (str.Length <= 0 ? item.DisplayName : item[this.FieldName]) : item[str.Substring(1)];
+        }
+
         /// <summary>
         /// Builds the control.
         /// </summary>
@@ -252,7 +250,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             this.Controls.Clear();
 
             UrlString urlString = new UrlString(this.Value);
-            
+
             foreach (string key in urlString.Parameters.Keys)
             {
 
@@ -267,7 +265,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                 }
                 else
                 {
-                   
+
                     this.Controls.Add(new LiteralControl(this.BuildMappingFormFieldSource("", "", urlString.Parameters["formSourceID"])));
                 }
             }
@@ -300,18 +298,18 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                         string index = Regex.Replace(input, "\\W", "_");
                         urlString[index] = fieldFormName ?? string.Empty;
                     }
-                    if(!string.IsNullOrWhiteSpace(fieldFormSource))
+                    if (!string.IsNullOrWhiteSpace(fieldFormSource))
                     {
                         urlString["formSourceID"] = fieldFormSource;
                     }
                 }
-                else if(!string.IsNullOrEmpty(key) && key.EndsWith("_source", StringComparison.InvariantCulture))
+                else if (!string.IsNullOrEmpty(key) && key.EndsWith("_source", StringComparison.InvariantCulture))
                 {
                     string fieldFormSource = nameValueCollection[key];
                     if (!string.IsNullOrWhiteSpace(fieldFormSource))
                     {
                         this.Controls.Add(new LiteralControl(this.BuildParameterMappingFieldNameFromSource(key, string.Empty, fieldFormSource)));
-                        urlString["formSourceID"] = fieldFormSource;                      
+                        urlString["formSourceID"] = fieldFormSource;
                     }
                 }
             }
@@ -342,27 +340,27 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             string str2 = this.Disabled ? " disabled=\"disabled\"" : string.Empty;
             string str3 = this.IsVertical ? "</tr><tr>" : string.Empty;
 
-            
+
             string controlSourceHTML = string.Empty;
-            if(!IsFormDataSourceAlreadyCreated)
+            if (!IsFormDataSourceAlreadyCreated)
             {
                 controlSourceHTML = BuildMappingFormFieldSource(mappingField, fieldName, source);
                 IsFormDataSourceAlreadyCreated = true;
             }
             string controlRowsHTML = string.Format("<table width=\"100%\" class='scAdditionalParameters'><tr><td>{0}</td>{2}<td width=\"100%\">{1}</td></tr></table>",
-                                                    (object)string.Format("<input id=\"{0}\" name=\"{1}\" type=\"text\"{2}{3} style=\"{6}\" value=\"{4}\" onchange=\"{5}\"/>", 
-                                                                           (object)uniqueId, 
-                                                                           (object)uniqueId, 
-                                                                           (object)str1, 
-                                                                           (object)str2, 
-                                                                           (object)StringUtil.EscapeQuote(mappingField), 
-                                                                           (object)clientEvent, 
+                                                    (object)string.Format("<input id=\"{0}\" name=\"{1}\" type=\"text\"{2}{3} style=\"{6}\" value=\"{4}\" onchange=\"{5}\"/>",
+                                                                           (object)uniqueId,
+                                                                           (object)uniqueId,
+                                                                           (object)str1,
+                                                                           (object)str2,
+                                                                           (object)StringUtil.EscapeQuote(mappingField),
+                                                                           (object)clientEvent,
                                                                            (object)this.NameStyle
                                                      ),
                                                     (object)this.GetValueHtmlControlFromSource(uniqueId, StringUtil.EscapeQuote(HttpUtility.UrlDecode(fieldName)), StringUtil.EscapeQuote(HttpUtility.UrlDecode(source))), //{1}
                                                     (object)str3); //{2}
-            
-            return string.Concat( controlSourceHTML, controlRowsHTML);
+
+            return string.Concat(controlSourceHTML, controlRowsHTML);
         }
 
         /// <summary>
@@ -402,7 +400,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             {
                 string itemHeader = this.GetItemHeader(obj);
                 bool flag = obj.ID.ToString() == value;
-                htmlTextWriter.Write("<option value=\"" + this.GetItemValue(obj) + "\"" + (flag ? " selected=\"selected\"" : string.Empty) + ">" + itemHeader + "</option>");
+                htmlTextWriter.Write("<option value=\"" + obj.ID.ToString() + "\"" + (flag ? " selected=\"selected\"" : string.Empty) + ">" + itemHeader + "</option>");
             }
             htmlTextWriter.Write("</select>");
             return htmlTextWriter.InnerWriter.ToString();
@@ -421,7 +419,7 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
             HtmlTextWriter htmlTextWriter = new HtmlTextWriter((TextWriter)new StringWriter());
 
             Guid isGuid = new Guid();
-            if(string.IsNullOrWhiteSpace(sourceFormID) || !Guid.TryParse(sourceFormID, out isGuid))
+            if (string.IsNullOrWhiteSpace(sourceFormID) || !Guid.TryParse(sourceFormID, out isGuid))
             {
                 // Form Field Empty: No source has been selected.
                 htmlTextWriter.Write("<select id=\"" + id + "_value\" name=\"" + id + "_value\"" + id + ">");
@@ -443,10 +441,10 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                 return htmlTextWriter.InnerWriter.ToString();
             }
 
-            htmlTextWriter.Write("<select id=\"" + id + "_value\" name=\"" + id + "_value\" value=\"" +id +"_value\" > ");
+            htmlTextWriter.Write("<select id=\"" + id + "_value\" name=\"" + id + "_value\" value=\"" + id + "_value\" > ");
             htmlTextWriter.Write("<option value=\"Default\">Select Form Field</option>");
 
-            foreach ( Item secionForm in form.Children)
+            foreach (Item secionForm in form.Children)
             {
 
                 if (secionForm.TemplateName.ToLowerInvariant() == "field")
@@ -459,11 +457,12 @@ namespace XC.Foundation.SitecoreExtensions.TemplateFields
                     htmlTextWriter.Write("<option value=\"" + formfield.ID + "\"" + (flag ? " selected=\"selected\"" : string.Empty) + " id=\"" + id + "_value\" name=\"" + formfield.Name + "_value\">" + formfield.Name + "</option>");
                 }
             }
-                      
+
 
             htmlTextWriter.Write("</select>");
-            return htmlTextWriter.InnerWriter.ToString();           
+            return htmlTextWriter.InnerWriter.ToString();
         }
-        
+        #endregion
+
     }
 }
