@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}</ProjectGuid>
+    <ProjectGuid>{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XC.Foundation.SitecoreExtensions</RootNamespace>
-    <AssemblyName>XC.Foundation.SitecoreExtensions</AssemblyName>
+    <RootNamespace>XC.Foundation.Forms</RootNamespace>
+    <AssemblyName>XC.Foundation.Forms</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -47,20 +47,14 @@
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Sitecore.Forms.Core, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sitecore.Forms.Core">
       <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.170518\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Forms.Custom, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sitecore.Forms.Custom">
       <HintPath>..\..\..\..\packages\Sitecore.Forms.Custom.NoReferences.8.2.170518\lib\NET452\Sitecore.Forms.Custom.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Forms.Mvc, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Sitecore.Forms.Mvc">
       <HintPath>..\..\..\..\packages\Sitecore.Forms.Mvc.NoReferences.8.2.170518\lib\NET452\Sitecore.Forms.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.170614\lib\NET452\Sitecore.Kernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.WFFM.Abstractions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.170518\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -103,19 +97,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SitecoreExtensions\CheckBoxHTMLField.cshtml" />
-    <Content Include="App_Config\Include\Foundation\SitecoreExtensions.CustomField.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="App_Config\Include\Foundation\Forms.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TemplateFields\FormMappingField.cs" />
-    <Compile Include="TemplateFields\MappingKeyLookupValueList.cs" />
-    <Compile Include="TemplateFields\MappingWFFMFieldName.cs" />
-    <Compile Include="WFFM\CheckboxHTML.cs" />
-    <Compile Include="WFFM\CheckBoxHTMLField.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -127,7 +113,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Fields\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Forms\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -141,9 +132,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>9882</DevelopmentServerPort>
+          <DevelopmentServerPort>12570</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9882/</IISUrl>
+          <IISUrl>http://localhost:12570/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -42,6 +42,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SitecoreExtensions", "Sitec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\code\XC.Foundation.SitecoreExtensions.csproj", "{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{063A2CD7-E012-4C54-854B-C4F4F2932C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC.Foundation.Forms", "src\Foundation\Forms\code\XC.Foundation.Forms.csproj", "{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +76,10 @@ Global
 		{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E0F581-177D-4FE6-A4C5-DC120C20E0FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +97,7 @@ Global
 		{7B4F5B50-D1CD-4020-9B0C-B1EF7E6B559C} = {BC80AB15-1E5C-4296-A228-1921FEA2484D}
 		{0625242B-8D0E-41C6-8D50-C8FA04EF5A69} = {412EB967-2017-49A1-B277-57FBD06BF14C}
 		{980F3F02-6ABA-4A5B-A641-8A80D7DF01DD} = {0625242B-8D0E-41C6-8D50-C8FA04EF5A69}
+		{063A2CD7-E012-4C54-854B-C4F4F2932C46} = {412EB967-2017-49A1-B277-57FBD06BF14C}
+		{00E0F581-177D-4FE6-A4C5-DC120C20E0FB} = {063A2CD7-E012-4C54-854B-C4F4F2932C46}
 	EndGlobalSection
 EndGlobal

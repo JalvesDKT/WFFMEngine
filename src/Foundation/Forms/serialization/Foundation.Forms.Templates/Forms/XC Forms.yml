@@ -1,0 +1,18 @@
+﻿---
+ID: "09d59b88-b63c-4e0a-ab1d-3241330dd808"
+Parent: "24ab6283-7138-45de-ade1-31f685bbce12"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Foundation/Forms/XC Forms
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Applications/32x32/form_red_edit.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20170919T034838:636413897188233833Z"
